@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9qahxp=q5$)g7ou&n0-$wsi^16j$b!g3g#a$b!aa-$g6f+i&3^
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback_key_for_dev')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+PORT = os.environ.get("PORT", 8000)
 ALLOWED_HOSTS = []
 
 
