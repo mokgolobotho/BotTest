@@ -29,6 +29,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback_key_for_dev')
 DEBUG = True
 PORT = os.environ.get("PORT", 8000)
 ALLOWED_HOSTS = ["*"]
+import dj_database_url
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.getenv("DATABASE_URL"))
+}
 
 
 # Application definition
