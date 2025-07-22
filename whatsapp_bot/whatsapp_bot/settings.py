@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'whatsapp_bot.wsgi.application'
+WSGI_APPLICATION = 'whatsapp_bot.whatsapp_bot.wsgi.application'
 
 
 # Database
