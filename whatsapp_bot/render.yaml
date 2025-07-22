@@ -3,7 +3,7 @@ services:
     name: whatsapp-django-bot
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn src.whatsapp_bot.wsgi
+    startCommand: python manage.py runserver 0.0.0.0:$PORT
     envVars:
       - key: DEBUG
         value: "False"
