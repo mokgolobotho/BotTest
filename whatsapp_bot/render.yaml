@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: whatsapp-django-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn whatsapp_bot.wsgi
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: VERIFY_TOKEN
+        value: your_custom_token_here
+      - key: WHATSAPP_TOKEN
+        value: your_whatsapp_api_token_here
+      - key: PHONE_NUMBER_ID
+        value: your_meta_phone_id
