@@ -3,16 +3,15 @@ services:
     name: whatsapp-django-bot
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python manage.py runserver 0.0.0.0:$PORT
-    rootDir: whatsapp_bot
+    startCommand: gunicorn whatsapp_bot.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DEBUG
         value: "False"
       - key: DJANGO_SECRET_KEY
         generateValue: true
       - key: VERIFY_TOKEN
-        value: your_custom_token_here
+        value: mwi007
       - key: WHATSAPP_TOKEN
-        value: your_whatsapp_api_token_here
+        value: EAAKLauNj6d4BPCx9htRqhuTiFmumd22laNEGQMsTmMz0yXiJHCjvRyC56yTk4EYtZB3cUba8VyeKOHC77wlNklFZBdP0aiHA4MDUCVbZBKNZCtNATZC2napeyZABC0A4we3SoZBUMswTrYDy9fsZBmOP5JpmGAobqu2WSP8veieSfr0snR4K924EZAWoV5XdIqydSZCWzSDdtWTHIo26PZBbNQDmConMF9xajjz4AiM8eua
       - key: PHONE_NUMBER_ID
-        value: your_meta_phone_id
+        value: 734578506400999
