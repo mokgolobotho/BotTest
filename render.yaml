@@ -4,7 +4,7 @@ services:
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn whatsapp_bot.wsgi
-    rootDir: "." 
+    rootDir: whatsapp_bot
     envVars:
       - key: DEBUG
         value: "False"
