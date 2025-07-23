@@ -2,8 +2,8 @@ services:
   - type: web
     name: whatsapp-django-bot
     runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn whatsapp_bot.wsgi
+    buildCommand: pip install -r ../requirements.txt
+    startCommand: gunicorn whatsapp_bot.wsgi:application
     rootDir: whatsapp_bot
     envVars:
       - key: DEBUG
